@@ -1,39 +1,66 @@
 package com.twu.biblioteca;
 
 public class Books {
-    int id;
-    boolean issued;
-    String name="";
-    String author="";
-    String yearOfPublication="";
+    private int id;
+    private boolean issued;
+    private String name="";
+    private String author="";
+    private String yearOfPublication="";
+    private Member issuer;
     Books(int id,String name,String author,String year)
     {
         this.id=id;
         this.name=name;
         this.author=author;
         this.yearOfPublication=year;
+        issued=false;
     }
-    private void setBookId(int id)
+    public void setBookId(int id)
     {
         this.id=id;
     }
-    private void setBookName(String name)
+    public void setBookName(String name)
     {
         this.name=name;
     }
-    private void setBookAuthor(String author)
+    public void setBookAuthor(String author)
     {
         this.author=author;
     }
-    private void yearOfPublication(String year)
+    public void setYearOfPublication(String year)
     {
         this.yearOfPublication=year;
     }
-    private void setIssued(boolean issued)
+    public void setIssued(boolean issued)
     {
         this.issued=issued;
+    }
+    public int getBookId()
+    {
+        return id;
+    }
+    public String getBookName()
+    {
+        return name;
+    }
+    public String getBookAuthor()
+    {
+        return author;
+    }
+    public String getYearOfPublication()
+    {
+        return yearOfPublication;
+    }
+    public boolean getIssued()
+    {
+        return issued;
+    }
+    public void setIssuer(Member memb)
+    {
+        this.issuer=memb;
     }
     public String toString() {
         return String.format( "%3s    %-20s  %-20s  %-4s",id, name,author,yearOfPublication );
     }
+
 }
